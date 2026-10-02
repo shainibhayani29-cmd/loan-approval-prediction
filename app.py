@@ -11,10 +11,17 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 
 if not firebase_admin._apps:
-    cred = credentials.Certificate("serviceAccountKey.json")
-    firebase_admin.initialize_app(cred)
-db = firestore.client()
+  import json
+import streamlit as st
+import firebase_admin
+from firebase_admin import credentials, firestore
 
+if not firebase_admin._apps:
+    firebase_config = json.loads(st.secrets["FIREBASE_CREDENTIALS"])
+    cred = credentials.Certificate(firebase_config)
+    firebase_admin.initialize_app(cred)
+
+db = firestore.client()
 
 # ============================================================
 # PAGE CONFIG

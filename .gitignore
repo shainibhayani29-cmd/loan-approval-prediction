@@ -1,0 +1,25 @@
+# Virtual environments
+venv/
+.venv/
+.venv313/
+
+# Firebase private key
+serviceAccountKey.json
+firebasekey.json
+*.json
+
+# Database
+users.db
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Streamlit
+.streamlit/
+
+# OS files
+.DS_Store

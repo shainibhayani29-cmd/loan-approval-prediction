@@ -5,3 +5,4 @@ numpy
 scikit-learn
 firebase-admin
 google-cloud-firestore
+matplotlib

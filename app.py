@@ -11,17 +11,10 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 
 if not firebase_admin._apps:
-  import json
-import streamlit as st
-import firebase_admin
-from firebase_admin import credentials, firestore
-
-if not firebase_admin._apps:
-    firebase_config = json.loads(st.secrets["FIREBASE_CREDENTIALS"])
-    cred = credentials.Certificate(firebase_config)
+    cred = credentials.Certificate("serviceAccountKey.json")
     firebase_admin.initialize_app(cred)
-
 db = firestore.client()
+
 
 # ============================================================
 # PAGE CONFIG
@@ -1328,9 +1321,6 @@ elif st.session_state.page == "login":
                         "Incorrect admin username or password."
                     )
 
-            st.caption(
-                "Demo admin: admin / Admin@123"
-            )
 
         # ----------------------------------------------------
         # SIGN UP
